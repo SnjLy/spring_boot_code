@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.helijia.storage.dao.search.mapper.RecommendWordMapper">
+    
+    
+    <select id="queryCityHotWords" resultType="com.helijia.storage.dao.search.entity.RecommendWord" parameterType="map">
+       select word,count(*) num,max(update_time) maxTime 
+		from recommend_words 
+       where type=2 and city=#{city}
+       group by word 
+       order by max(update_time) desc,count(*) desc
+       limit 10
+    </select>
+    
+    <select id="queryCitys" resultType="integer" parameterType="map">
+       select id from city where city_level=2 and enable_status=1 
+    </select>   
+</mapper>

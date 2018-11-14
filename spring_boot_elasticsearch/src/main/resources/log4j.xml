@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration>
+
+    <appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d - %c -%-4r [%t] %-5p %x - %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="App" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="/tmp/logs/sys.log" />
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} [%c]-[%t]-[%M]-[%L]-[%p] %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="api" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="/tmp/logs/api.log" />
+        <param name="append" value="true"/>
+        <param name="encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-d{yyyy-MM-dd HH:mm:ss} [%c]-[%t]-[%M]-[%L]-[%p] %m%n"/>
+        </layout>
+    </appender>
+
+
+    <logger name="com.yehao.boot" additivity="false">
+        <level value="debug" />
+        <appender-ref ref="App" />
+    </logger>
+
+    <root>
+        <priority value="info" />
+        <appender-ref ref="App" />
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</log4j:configuration>
