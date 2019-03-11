@@ -1,14 +1,14 @@
-package com.helijia.storage.service;
+package com.datasorce.storage.service;
 
-import com.helijia.storage.dao.search.entity.RecommendWord;
-import com.helijia.storage.dao.search.mapper.RecommendWordMapper;
+import com.datasorce.storage.dao.search.entity.RecommendWord;
+import com.datasorce.storage.dao.search.mapper.RecommendWordMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
- * @Package: com.helijia.storage.service
+ * @Package: com.datasource.storage.service
  * @Description:
  * @function:
  * @Author : LiuYong

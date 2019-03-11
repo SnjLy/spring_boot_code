@@ -1,9 +1,9 @@
-package com.helijia.storage.controller;
+package com.datasorce.storage.controller;
 
-import com.helijia.storage.dao.hlj.entity.UserCollect;
-import com.helijia.storage.dao.search.entity.RecommendWord;
-import com.helijia.storage.service.RecommendService;
-import com.helijia.storage.service.UserService;
+import com.datasorce.storage.dao.search.entity.RecommendWord;
+import com.datasorce.storage.service.RecommendService;
+import com.datasorce.storage.service.UserService;
+import com.datasorce.storage.dao.hlj.entity.UserCollect;
 import org.assertj.core.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @Package: com.helijia.storage.controller
+ * @Package: com.datasource.storage.controller
  * @Description:
  * @function:
  * @Author : LiuYong

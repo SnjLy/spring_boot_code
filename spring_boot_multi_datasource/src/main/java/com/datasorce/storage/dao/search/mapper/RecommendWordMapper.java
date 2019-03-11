@@ -1,6 +1,6 @@
-package com.helijia.storage.dao.search.mapper;
+package com.datasorce.storage.dao.search.mapper;
 
-import com.helijia.storage.dao.search.entity.RecommendWord;
+import com.datasorce.storage.dao.search.entity.RecommendWord;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;

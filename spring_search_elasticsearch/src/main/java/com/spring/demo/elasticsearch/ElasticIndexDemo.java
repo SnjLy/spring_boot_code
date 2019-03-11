@@ -11,7 +11,7 @@ import org.elasticsearch.common.xcontent.XContentType;
 import java.io.IOException;
 
 /**
- * @Package: com.helijia.elasticsearch.client
+ * @Package: com.datasource.elasticsearch.client
  * @Description:
  * @function:
  * @Author : LiuYong

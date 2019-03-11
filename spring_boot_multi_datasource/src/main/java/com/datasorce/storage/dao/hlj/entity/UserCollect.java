@@ -1,4 +1,4 @@
-package com.helijia.storage.dao.hlj.entity;
+package com.datasorce.storage.dao.hlj.entity;
 
 import java.util.Date;
 

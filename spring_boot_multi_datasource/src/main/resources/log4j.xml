@@ -28,7 +28,7 @@
     </appender>
 
 
-    <logger name="com.helijia.storage" additivity="false">
+    <logger name="com.datasource.storage" additivity="false">
         <level value="debug" />
         <appender-ref ref="App" />
     </logger>

@@ -1,4 +1,4 @@
-package com.helijia.storage.datasource;
+package com.datasorce.storage.datasource;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -9,49 +9,53 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 /**
- * @Package: com.helijia.storage.datasources
+ * @Package: com.datasource.storage.datasources
  * @Description:
  * @function:
  * @Author : LiuYong
  * Created by yehao on 2018/8/28.
  */
 @Configuration
-@MapperScan(basePackages = SearchDataSourceConfig.PACKAGES, sqlSessionFactoryRef = "searchSqlSessionFactory")
-public class SearchDataSourceConfig {
-    public static final Logger LOGGER = LoggerFactory.getLogger(SearchDataSourceConfig.class);
+@MapperScan(basePackages = HljDataSourceConfig.PACKAGES, sqlSessionFactoryRef = "hljSqlSessionFactory")
+public class HljDataSourceConfig {
+    public static final Logger LOGGER = LoggerFactory.getLogger(HljDataSourceConfig.class);
 
-    static final String PACKAGES = "com.helijia.storage.dao.search.mapper";
+    static final String PACKAGES = "com.datasource.storage.dao.hlj.mapper";
 
-    private static final String MAPPER_LOCATE = "classpath:sql/search/**.xml";
+    private static final String MAPPER_LOCATE = "classpath:sql/hlj/**.xml";
 
-    @ConfigurationProperties(prefix = "search.datasource")
-    @Bean(name = "searchDatasource")
-    public DruidDataSource searchDataSource(){
+    @ConfigurationProperties(prefix = "hlj.datasource")
+    @Primary
+    @Bean(name = "hljDatasource")
+    public DruidDataSource hljDataSource(){
         return new DruidDataSource();
     }
 
 
 
-    @Bean(name="searchTransactionManager")
-    public DataSourceTransactionManager searchTransactionManager(){
-        return new DataSourceTransactionManager(searchDataSource());
+    @Bean(name="hljTransactionManager")
+    @Primary
+    public DataSourceTransactionManager hljTransactionManager(){
+        return new DataSourceTransactionManager(hljDataSource());
     }
 
 
-    @Bean(name = "searchSqlSessionFactory")
-    public SqlSessionFactory searchSqlSessionFactory(){
+    @Primary
+    @Bean(name = "hljSqlSessionFactory")
+    public SqlSessionFactory hljSqlSessionFactory(){
         final SqlSessionFactoryBean sessionFactoryBean = new SqlSessionFactoryBean();
-        sessionFactoryBean.setDataSource(searchDataSource());
+        sessionFactoryBean.setDataSource(hljDataSource());
 
         try {
             sessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(MAPPER_LOCATE));
             return sessionFactoryBean.getObject();
         } catch (Exception e) {
-            LOGGER.error("配置search数据库的SqlSessionFactory失败，error:{}", e.getMessage());
+            LOGGER.error("配置主库的SqlSessionFactory失败，error:{}", e.getMessage());
             throw new RuntimeException(e.getMessage());
         }
     }

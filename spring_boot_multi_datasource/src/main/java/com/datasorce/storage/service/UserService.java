@@ -1,7 +1,7 @@
-package com.helijia.storage.service;
+package com.datasorce.storage.service;
 
-import com.helijia.storage.dao.hlj.entity.UserCollect;
-import com.helijia.storage.dao.hlj.mapper.UserCollectMapper;
+import com.datasorce.storage.dao.hlj.mapper.UserCollectMapper;
+import com.datasorce.storage.dao.hlj.entity.UserCollect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * @Package: com.helijia.storage.service
+ * @Package: com.datasource.storage.service
  * @Description:
  * @function:
  * @Author : LiuYong

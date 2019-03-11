@@ -1,4 +1,4 @@
-package com.helijia.storage.datasource;
+package com.datasorce.storage.datasource;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.TransactionManagementConfigure
 import javax.annotation.Resource;
 
 /**
- * @Package: com.helijia.storage.datasource
+ * @Package: com.datasource.storage.datasource
  * @Description:
  * @function:
  * @Author : LiuYong

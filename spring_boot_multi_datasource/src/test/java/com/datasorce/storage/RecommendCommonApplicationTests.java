@@ -1,11 +1,11 @@
-package com.helijia.storage;
+package com.datasorce.storage;
 
 import com.alibaba.fastjson.JSON;
-import com.helijia.storage.dao.hlj.entity.UserCollect;
-import com.helijia.storage.dao.hlj.mapper.UserCollectMapper;
-import com.helijia.storage.dao.search.entity.RecommendWord;
-import com.helijia.storage.service.RecommendService;
-import com.helijia.storage.service.UserService;
+import com.datasorce.storage.dao.hlj.mapper.UserCollectMapper;
+import com.datasorce.storage.dao.hlj.entity.UserCollect;
+import com.datasorce.storage.dao.search.entity.RecommendWord;
+import com.datasorce.storage.service.RecommendService;
+import com.datasorce.storage.service.UserService;
 import org.assertj.core.util.DateUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;

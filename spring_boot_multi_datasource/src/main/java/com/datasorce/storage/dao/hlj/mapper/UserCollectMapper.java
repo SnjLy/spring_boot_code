@@ -1,7 +1,7 @@
-package com.helijia.storage.dao.hlj.mapper;
+package com.datasorce.storage.dao.hlj.mapper;
 
 
-import com.helijia.storage.dao.hlj.entity.UserCollect;
+import com.datasorce.storage.dao.hlj.entity.UserCollect;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;

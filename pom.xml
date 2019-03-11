@@ -14,6 +14,7 @@
         <module>spring_boot_swagger</module>
         <module>spring_boot_multi_datasource</module>
         <module>spring_boot_elasticsearch</module>
+        <module>spring_search_elasticsearch</module>
     </modules>
 
 
