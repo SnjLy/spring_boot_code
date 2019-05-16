@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: spring-cloud-eureka-provider
+
+server:
+  port: 8901
+
+
+security:
+  user:
+    name: yehao
+    password: 123456
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${security.user.name}:${security.user.password}@localhost:8900/eureka/
