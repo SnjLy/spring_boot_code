@@ -1,4 +1,4 @@
-package com.spring.demo.elasticsearch.client;
+package com.spring.demo.elasticsearch.rest_hight_level.client;
 
 import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;

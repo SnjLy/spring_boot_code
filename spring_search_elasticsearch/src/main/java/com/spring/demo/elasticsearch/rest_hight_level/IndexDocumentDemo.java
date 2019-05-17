@@ -1,8 +1,7 @@
-package com.spring.demo.elasticsearch;
+package com.spring.demo.elasticsearch.rest_hight_level;
 
-import com.spring.demo.elasticsearch.client.ElasticRestClient;
+import com.spring.demo.elasticsearch.rest_hight_level.client.ElasticRestClient;
 import org.elasticsearch.ElasticsearchException;
-import org.elasticsearch.action.ActionListener;
 import org.elasticsearch.action.DocWriteResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;

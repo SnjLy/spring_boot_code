@@ -1,6 +1,6 @@
-package com.spring.demo.elasticsearch;
+package com.spring.demo.elasticsearch.rest_hight_level;
 
-import com.spring.demo.elasticsearch.client.ElasticRestClient;
+import com.spring.demo.elasticsearch.rest_hight_level.client.ElasticRestClient;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.ShardSearchFailure;
