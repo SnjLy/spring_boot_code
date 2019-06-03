@@ -17,6 +17,7 @@
         <module>spring_search_elasticsearch</module>
         <module>spring_cloud_eureka_server</module>
         <module>spring_cloud_eureka_provider</module>
+        <module>spring_boot_datasource_annotation</module>
     </modules>
 
 
