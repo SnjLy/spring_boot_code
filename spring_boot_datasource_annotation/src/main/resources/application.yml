@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring-boot-datasource-annotation
+  datasource:
+    username: root
+    password: yehao123456
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yehao_test?useUnicode=true&characterEncoding=utf8
+
+
+server:
+  port: 9108
+
