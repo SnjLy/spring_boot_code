@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: spring-boot-mybatis-plus
+  datasource:
+    username: root
+    password: yehao123456
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/yehao_test?useUnicode=true&characterEncoding=utf8
+    minIdle: 5
+    maxActive: 100
+    initialSize: 10
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 50
+    removeAbandoned: true
+    filters: stat
+    type: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+
+server:
+  port: 7905
+
+
+
+logging:
+  level:
+    root: debug
+    com:
+      datasource:
+        storage: DEBUG
+
+
+#mybatis:
+#  config-location: classpath:mybatis/mybatis-config.xml
+#  mapper-locations: classpath:sql/**.xml
+#  type-aliases-package: com.datasource.storage.dao.entity
