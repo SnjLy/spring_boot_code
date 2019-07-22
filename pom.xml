@@ -18,6 +18,9 @@
         <module>spring_cloud_eureka_server</module>
         <module>spring_cloud_eureka_provider</module>
         <module>spring_boot_datasource_annotation</module>
+        <module>spring_boot_bean_init</module>
+        <module>spring_boot_mybatis_plus</module>
+        <module>spring_boot_elasticsearch_sql</module>
     </modules>
 
 
