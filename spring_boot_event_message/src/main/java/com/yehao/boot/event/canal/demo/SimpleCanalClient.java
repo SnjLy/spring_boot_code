@@ -10,7 +10,6 @@ import java.util.List;
 
 /**
  * @author : LiuYong
- * Created by bosszhipin on 2019-08-09.
  * @Package: com.yehao.boot.event.canal.demo
  * @Description:
  * @function:

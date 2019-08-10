@@ -11,7 +11,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * @author : LiuYong
- * Created by bosszhipin on 2019-08-10.
  * @Package: com.yehao.boot.redis
  * @Description:
  * @function:

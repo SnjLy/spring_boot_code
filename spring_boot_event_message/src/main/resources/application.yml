@@ -1,5 +1,5 @@
 
-localhost=106.13.44.20
+localhost: 106.13.44.20
 spring:
   application:
     name: spring-boot-event-message
@@ -28,4 +28,10 @@ config:
     userName: canal
     password: canal
     batchSize: 1000
-
+  mysql:
+    ip: localhost
+    port: 3306
+    dbName: yehao_test
+    userName: root
+    password: yehao123456
+    tableName: user

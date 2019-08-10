@@ -12,7 +12,6 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * @author : LiuYong
- * Created by bosszhipin on 2019-08-10.
  * @Package: com.yehao.boot.message.redis.framework
  * @Description:
  * @function:

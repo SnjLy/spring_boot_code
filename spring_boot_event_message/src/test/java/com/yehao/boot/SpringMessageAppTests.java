@@ -1,23 +1,22 @@
 package com.yehao.boot;
 
-import org.junit.Test;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author : LiuYong
- * Created by bosszhipin on 2019-08-10.
  * @Package: com.yehao.boot
  * @Description:
  * @function:
  */
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
+@Slf4j
 public class SpringMessageAppTests {
 
-    @Test
-    public void contextLoads() {
-    }
+
 
 }

@@ -21,6 +21,7 @@
         <module>spring_boot_bean_init</module>
         <module>spring_boot_mybatis_plus</module>
         <module>spring_boot_elasticsearch_sql</module>
+        <module>spring_boot_event_message</module>
     </modules>
 
 
@@ -52,6 +53,13 @@
                 <version>Edgware.SR3</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-redis</artifactId>
+                <version>1.4.7.RELEASE</version>
             </dependency>
 
 
@@ -92,7 +100,6 @@
                 <artifactId>log4j-api</artifactId>
                 <version>2.11.1</version>
             </dependency>
-
 
 
             <!-- springboot swagger2包 -->
@@ -157,6 +164,15 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.5.16.RELEASE</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
             </plugin>
         </plugins>
 

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author : LiuYong
- * Created by bosszhipin on 2019-08-10.
  * @Package: com.yehao.boot.message.redis.demo
  * @Description:
  * @function:

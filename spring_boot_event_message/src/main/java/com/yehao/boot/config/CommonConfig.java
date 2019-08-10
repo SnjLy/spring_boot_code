@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @author : LiuYong
- * Created by bosszhipin on 2019-08-09.
  * @Package: com.yehao.boot
  * @Description:
  * @function:
