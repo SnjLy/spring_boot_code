@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring.boot.parent</artifactId>
+        <groupId>com.yehao.boot</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>spring_elasticsearch_plugin</artifactId>
+    <version>6.3.2-SNAPSHOT</version>
+    <name>spring boot elasticsearch plugin</name>
+    <description>自定义es插件实现逻辑</description>
+
+
+    <properties>
+        <elasticsearch.version>6.3.2</elasticsearch.version>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <!--Actually our plugin will run in elasticsearch. So elasticsearch is already provided here.-->
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>${elasticsearch.version}</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>log4j-api</artifactId>
+                    <groupId>org.apache.logging.log4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+
+        <!--Elasticsearch provides a nice test framework which can be reused to run some tests.-->
+        <dependency>
+            <groupId>org.elasticsearch.test</groupId>
+            <artifactId>framework</artifactId>
+            <version>5.0.0-rc1</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>elasticsearch</artifactId>
+                    <groupId>org.elasticsearch</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>net.java.dev.jna</groupId>
+            <artifactId>jna</artifactId>
+            <version>4.1.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.11.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.11.1</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>log4j-api</artifactId>
+                    <groupId>org.apache.logging.log4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+
+        <resources>
+            <resource>
+                <!--We don’t want to add this file in our JAR so we tell that to Maven in the pom.xml:-->
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>*.properties</exclude>
+                </excludes>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <!--Because we want to use Java 8, we need to configure the compiler plugin:-->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <outputDirectory>${project.build.directory}/releases/</outputDirectory>
+                    <descriptors>
+                        <descriptor>${basedir}/src/main/assemblies/plugin.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <!--for test-->
+            <plugin>
+                <!-- we skip surefire to work with randomized testing above -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.carrotsearch.randomizedtesting</groupId>
+                <artifactId>junit4-maven-plugin</artifactId>
+                <version>2.3.3</version>
+
+                <configuration>
+                    <assertions enableSystemAssertions="false">
+                        <enable/>
+                    </assertions>
+
+                    <listeners>
+                        <report-text />
+                    </listeners>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>unit-tests</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>junit4</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
