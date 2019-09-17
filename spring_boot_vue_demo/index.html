@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head >
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+<body>
+<div id="app">
+
+    <div class=".bg">
+        hello world
+    </div>
+
+    <div>
+        {{ message }}
+    </div>
+    <a :href="url">链接</a>
+
+    <div>
+        <ol>
+            <li v-for="site in sites">
+                {{ site.name }}
+            </li>
+        </ol>
+    </div>
+
+
+<!--    <button v-on:click="counter += 1">增加1</button>-->
+<!--    <p>这个按钮被点击了 {{ counter }} 次。</p>-->
+
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            url: 'http://www.baidu.com',
+            counter: 0,
+            sites: [
+                {name: 'course'},
+                {name: 'class'},
+                {name: 'coding'}
+            ]
+        },
+        method: {
+            submit: function () {
+
+            }
+        },
+        computed: {
+
+        }
+    })
+</script>
+
+</body>
+</html>
