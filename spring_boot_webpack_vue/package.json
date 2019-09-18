@@ -1,0 +1,24 @@
+{
+  "name": "spring_boot_webpack_vue",
+  "version": "1.0.0",
+  "description": "尝试使用webpack&vue实现前端开发demo",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.js"
+  },
+  "author": "liuyong",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^6.0.0",
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.0.0",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
+  }
+}
