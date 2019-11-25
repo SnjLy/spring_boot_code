@@ -15,13 +15,9 @@
     }
 </script>
 
-<style lang="css">
-#test {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: red;
+<style>
+#test{
+  color: red;
 }
 
 </style>
