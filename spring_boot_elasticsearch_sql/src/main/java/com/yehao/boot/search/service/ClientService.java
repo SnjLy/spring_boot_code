@@ -32,9 +32,10 @@ public class ClientService {
                     .put("cluster.name", "snjly-es-cluster")
                     .put("client.transport.sniff", true)
                     .put("xpack.security.transport.ssl.enabled", "true")
-                    .put("xpack.ssl.key", "/Users/bosszhipin/Software/es-xpack-6.5.3/elasticsearch-cert.key")
-                    .put("xpack.ssl.certificate", "/Users/bosszhipin/Software/es-xpack-6.5.3/elasticsearch-cert.crt")
-                    .put("xpack.ssl.certificate_authorities", "/Users/bosszhipin/Software/es-xpack-6.5.3/ca.crt")
+//                    .put("xpack.security.transport.ssl.verification_mode", "certificate")
+//                    .put("xpack.ssl.key", "/Users/bosszhipin/Software/client/client.key")
+//                    .put("xpack.ssl.certificate", "/Users/bosszhipin/Software/client/client.crt")
+//                    .put("xpack.ssl.certificate_authorities", "/Users/bosszhipin/Software/ca/ca.crt")
                     .put("xpack.security.user", "elastic:elasticsearch")
                     .build())
                     .addTransportAddress(new TransportAddress(InetAddress.getByName("106.13.44.20"), 9300));
