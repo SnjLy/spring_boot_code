@@ -107,7 +107,7 @@ public class IngestPlugin extends Plugin implements ScriptPlugin, ActionPlugin {
      */
     @Override
     public ScriptEngine getScriptEngine(Settings settings, Collection<ScriptContext<?>> contexts) {
-        return null;
+        return new ExpertScriptEngine();
     }
 
     /**
