@@ -23,6 +23,7 @@
         <module>spring_boot_elasticsearch_sql</module>
         <module>spring_boot_event_message</module>
         <module>spring_elasticsearch_plugin</module>
+        <module>spring_boot_customer_starter</module>
     </modules>
 
 
