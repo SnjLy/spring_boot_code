@@ -1,0 +1,27 @@
+package rules ;
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory ;
+import java.lang.String;
+import com.yehao.boot.rules.drools.entity.QueryParam;
+import com.yehao.boot.rules.drools.entity.RuleResult;
+import com.yehao.boot.rules.drools.service.RuleEngineServiceImpl;
+dialect  "java"
+rule "paramcheck1"
+    salience 99
+    when queryParam : QueryParam(paramId != null && paramSign.equals("+"))
+        resultParam : RuleResult()
+    then
+        final Logger LOGGER = LoggerFactory.getLogger("param-check-one 规则引擎") ;
+        LOGGER.info("参数:getParamId="+queryParam.getParamId()+";getParamSign="+queryParam.getParamSign());
+        RuleEngineServiceImpl ruleEngineService = new RuleEngineServiceImpl() ;
+        ruleEngineService.executeAddRule(queryParam);
+        resultParam.setPostCodeResult(true);
+    if (1==2){
+
+    }else {
+
+    }
+    while (1==1){
+
+    }
+end
