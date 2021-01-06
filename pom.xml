@@ -26,6 +26,7 @@
         <module>spring_boot_customer_starter</module>
         <module>spring_boot_rule_engine</module>
         <module>spring_boot_zookeeper</module>
+        <module>spring_boot_trace</module>
     </modules>
 
 
