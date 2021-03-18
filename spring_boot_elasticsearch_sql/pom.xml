@@ -13,7 +13,7 @@
 
     <properties>
         <elasticsearch-sql.version>6.3.0.0</elasticsearch-sql.version>
-        <es.version>6.5.4</es.version>
+        <es.version>7.11.2</es.version>
     </properties>
 
     <repositories>
@@ -52,7 +52,7 @@
         <dependency>
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>transport</artifactId>
-            <version>6.5.4</version>
+            <version>7.11.2</version>
         </dependency>
 
         <dependency>
