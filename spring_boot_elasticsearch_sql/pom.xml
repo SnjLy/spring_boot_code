@@ -13,7 +13,7 @@
 
     <properties>
         <elasticsearch-sql.version>6.3.0.0</elasticsearch-sql.version>
-        <es.version>6.5.4</es.version>
+        <es.version>6.8.15</es.version>
     </properties>
 
     <repositories>
